@@ -9,7 +9,17 @@ jobs:
             - name: Print hello
               run: echo "Hello World"
 
-            - name: Print Goodbye
+
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print hi to you
+              run: echo "Hi, u"
+
+            - name: I will fail
+              run: exec 1
+
+            - name: Say Goodbye
               run: echo "Goodbye"
 
 
