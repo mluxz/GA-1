@@ -1,6 +1,6 @@
 name: 1 - hello - world
 
-on: push
+on: workflow_dispatch
 
 jobs:
     first-job:
