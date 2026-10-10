@@ -1,0 +1,28 @@
+name: 2 - different - input
+
+on:
+    push:
+    workflow_dispatch:
+        inputs:
+            MySQL:
+                required: false
+                type: boolean
+            PostgreSQL:
+                required: false
+                type: boolean
+jobs:
+    fetch-data:
+        runs-on: ubuntu-latest
+        steps:
+          - name: MySQL fetch
+            if: ${{ github.event.inputs.MySQL == 'true' }}
+            run: echo "I will retreive data from MySQL."
+
+          - name: PostgreSQL fetch
+            if: ${{ github.event.inputs.PostgreSQL == 'true' }}
+            run: echo "I will retrieve data from PostgreSQL."
+            
+          - name: You did it 
+            run: echo "Done."
+
+        
