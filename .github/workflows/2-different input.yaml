@@ -21,8 +21,12 @@ jobs:
           - name: PostgreSQL fetch
             if: ${{ github.event.inputs.PostgreSQL == 'true' }}
             run: echo "I will retrieve data from PostgreSQL."
-            
+
           - name: You did it 
             run: echo "Done."
 
-        
+          - name: Some log prop.
+            run: 
+              echo "The name of event is = ${{ github.event.name }}."
+              echo "Commit SHA is = ${{ github.sha }}."
+              echo "Runners is =${{ runner.os }}"
