@@ -27,6 +27,6 @@ jobs:
 
           - name: Some log prop.
             run: |
-              echo "The name of event is = ${{ github.event.name }}."
+              echo "The name of event is = ${{ github.event.inputs }}."
               echo "Commit SHA is = ${{ github.sha }}."
               echo "Runners is =${{ runner.os }}"
