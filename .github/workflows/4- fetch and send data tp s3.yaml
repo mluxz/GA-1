@@ -19,7 +19,7 @@ jobs:
           TIMESTAMP=$(date +%s)
           OUTPUT_FILE="stage/${TIMESTAMP}.csv"
           mkdir -p stage
-          curl -s -H "User-Agent: Chrome/123.0" https://www.sahamyab.com/guest/twiter/list?v=0.1 | jq '.items[] | [.id, .sendTime, .sendTimePersian, .senderName, .senderUsername, .type, .content] | join(",") ' > $OUTPUT_FILE
+          curl -s -H "User-Agent: Chrome/123.0" "https://www.sahamyab.com/guest/twiter/list?v=0.1" | jq '.items[] | [.id, .sendTime, .sendTimePersian, .senderName, .senderUsername, .type, .content] | join(",") ' > $OUTPUT_FILE
           echo "Data saved to $OUTPUT_FILE"
 
       - name: Commit and push changes
