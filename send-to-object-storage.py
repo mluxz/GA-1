@@ -8,8 +8,8 @@ from botocore.exceptions import ClientError
 
 logging.basicConfig(level=logging.INFO)
 
-access_key = os.getenv('ACCESS_KEY')
-secret_key = os.getenv('SECRET_KEY')
+access_key = os.getenv('231786a8-2f4c-424e-afe0-7f2e6472dd17')
+secret_key = os.getenv('9d27c2c98eb1d80a1d7e774a9d3bf3da64ef806fb6b9940b20ceb094fd14e38c')
 
 def upload_files_from_directory(directory):
     try:
@@ -20,7 +20,8 @@ def upload_files_from_directory(directory):
             aws_secret_access_key = secret_key
         )
 
-        bucket_name = 'githubactions-14030823'
+        bucket_name = '12857'
+
         bucket = s3_resource.Bucket(bucket_name)
         bucket.create(ACL='public-read')
 
